@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="description" content="此代码内容为侧边导航收缩伸展效果" />
+<title>侧边导航收缩伸展效果</title>
+<link href="css/menu.css" type="text/css" rel="stylesheet">
+<link href="../css/common.css" type="text/css" rel="stylesheet">
+<script src="js/jquery-1.4.2.js" type="text/javascript"></script>
+<script type="text/javascript">
+	$(function() {
+		$(".subNav").click(
+				function() {
+					$(this).toggleClass("currentDd").siblings(".subNav")
+							.removeClass("currentDd")
+					$(this).toggleClass("currentDt").siblings(".subNav")
+							.removeClass("currentDt")
+
+					// 修改数字控制速度， slideUp(300)控制卷起速度
+					$(this).next(".navContent").slideToggle(300).siblings(
+							".navContent").slideUp(300);
+				})
+	})
+</script>
+</head>
+<body>
+	<div class="contain">
+		<!-- 代码 开始 -->
+		<p class="text">ERP管理系统</p>
+		<div class="subNavBox">
+			<div class="subNav currentDd currentDt">商品管理</div>
+			<ul class="navContent " style="display: block">
+				<li><a href="PreShowProduct_manageServlet" target="main">商品管理</a></li>
+				<li><a href="product/garagemanage.jsp" target="main">出库管理</a></li>
+				<li><a href="product/order_query.jsp" target="main">订单管理</a></li>
+				<li><a href="product/stockmanage.jsp" target="main">库存管理</a></li>
+				<li><a href="product/mattermanage.jsp" target="main">物料管理</a></li>
+			</ul>
+			<div class="subNav">销售管理</div>
+			<ul class="navContent">
+				<li><a href="sale/turnoutmanage.jsp" target="main">出勤管理</a></li>
+				<li><a href="PreShowCustomizationServlet" target="main">定制管理</a></li>
+				<li><a href="sale/passenger.jsp" target="main">客流管理</a></li>
+				<li><a href="sale/sale_check.jsp" target="main">盘点管理</a></li>
+				<li><a href="sale/sale_manage.jsp" target="main">销售管理</a></li>
+			</ul>
+			<div class="subNav">会员管理</div>
+			<ul class="navContent">
+				<li><a href="PreShowMember_manageServlet" target="main">会员管理</a></li>
+				<li><a href="PreShowMember_queryServlet" target="main">会员查询</a></li>
+				<li><a href="member/member_maintain.jsp" target="main">客户维护</a></li>
+				<li><a href="member/member_exchange.jsp" target="main">积分兑换</a></li>
+				<li><a href="member/member_message.jsp" target="main">群发短信</a></li>
+			</ul>
+			<div class="subNav">品牌管理</div>
+			<ul class="navContent">
+				<li><a href="brand/event_planning.jsp" target="main">活动策划</a></li>
+				<li><a href="brand/gift_manage.jsp" target="main">礼品管理</a></li>
+				<li><a href="brand/media_manage.jsp" target="main">媒介管理</a></li>
+				<li><a href="brand/brand_manage.jsp" target="main">品牌管理</a></li>
+				<li><a href="brand/trackingprotection.jsp" target="main">维护跟踪</a></li>
+				<li><a href="brand/image_manage.jsp" target="main">形象管理</a></li>
+			</ul>
+			<div class="subNav">统计查询</div>
+			<ul class="navContent">
+				<li><a href="statistics/summary_day.jsp" target="main">日汇总</a></li>
+				<li><a href="statistics/summary_month.jsp" target="main">月汇总</a></li>
+				<li><a href="#">季度汇总</a></li>
+				<li><a href="statistics/summary_year.jsp" target="main">年汇总</a></li>
+			</ul>
+			<div class="subNav">业绩分析</div>
+			<ul class="navContent">
+				<li><a href="#">日环比分析</a></li>
+				<li><a href="#">月环比分析</a></li>
+				<li><a href="#">利润分析</a></li>
+			</ul>
+			<div class="subNav">系统设置</div>
+			<ul class="navContent">
+				<li><a href="system/register.jsp" target="main">添加用户</a>
+				<li><a href="system/system_set.jsp" target="main">系统设置</a></li>
+				<li><a href="test.jsp">权限管理</a></li>
+				<li><a href="#">数据备份</a></li>
+			</ul>
+		</div>
+	</div>
+</body>
+</html>

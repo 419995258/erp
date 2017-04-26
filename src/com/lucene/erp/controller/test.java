@@ -1,0 +1,88 @@
+package com.lucene.erp.controller;
+
+import java.awt.Font;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.Date;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+import org.jfree.chart.ChartFactory;
+import org.jfree.chart.JFreeChart;
+import org.jfree.chart.StandardChartTheme;
+import org.jfree.chart.servlet.ServletUtilities;
+import org.jfree.data.general.DefaultPieDataset;
+
+import com.lucene.erp.domain.User;
+import com.lucene.erp.util.DateUtil;
+
+/**
+ * Servlet implementation class test
+ */
+@WebServlet("/test")
+public class test extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+
+	/**
+	 * @see HttpServlet#HttpServlet()
+	 */
+	public test() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
+	 *      response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		doPost(request, response);
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
+	 *      response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		Date date = DateUtil.fomatDate(request.getParameter("message"));
+		HttpSession session = request.getSession();
+		PrintWriter out = response.getWriter();
+		User user = (User) session.getAttribute("user"); 
+		// 解决中文乱码
+		StandardChartTheme theme = new StandardChartTheme("CN");
+		theme.setExtraLargeFont(new Font("黑体", Font.PLAIN, 16));
+		theme.setRegularFont(new Font("黑体", Font.PLAIN, 16));
+		theme.setLargeFont(new Font("黑体", Font.PLAIN, 16));
+		ChartFactory.setChartTheme(theme);
+		// 步骤1：创建初始数据集DefaultPieDataset
+		DefaultPieDataset dataset = new DefaultPieDataset();
+
+		// 步骤2：设置数据集数据
+		dataset.setValue("优秀", 0.15);
+		dataset.setValue("良好", 0.2);
+		dataset.setValue("中等", 0.4);
+		dataset.setValue("合格", 0.2);
+		dataset.setValue("不及格", 0.05);
+		// 步骤3：创建饼状报表
+		JFreeChart chart = ChartFactory.createPieChart3D("考试成绩统计图", dataset, true, true, true);
+		// JFreeChart chart = ChartFactory.createPieChart("考试成绩统计图",
+		// dataset,true,true,true);
+
+		// 步骤4：利用org.jfree.chart.servlet.ServletUtilities将chart保存为图片，确定宽度与高度，并确定其保存的范围（一般可以用session）
+		String filename = ServletUtilities.saveChartAsPNG(chart, 500, 300, session);
+
+		// 步骤5：组织图片路径
+		String graphURL = "DisplayChart?filename=" + filename;
+		out.print(graphURL);
+	}
+
+}
