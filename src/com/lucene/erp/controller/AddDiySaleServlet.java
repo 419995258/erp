@@ -310,12 +310,15 @@ public class AddDiySaleServlet extends HttpServlet {
 			// response.getWriter().write(result.toString());
 			response.getWriter().write(result.toString());
 
-		} catch (FileUploadException e) {
+		}  catch (Exception e) {
 			// TODO Auto-generated catch block
+			Log.out("error", e);
 			e.printStackTrace();
-		} catch (ParseException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			Map<String, String> data = new HashMap<String, String>();
+			data.put("result", "0");
+			data.put("msg", "添加失败,请刷新页面重新添加");
+			JSONObject result = new JSONObject(data);
+			response.getWriter().write(result.toString());
 		} finally {
 			// 返回页面
 			/*

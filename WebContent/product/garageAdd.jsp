@@ -34,7 +34,7 @@
 			<tr>
 				<td width="80" align="right"><div align="right">商品编号：</div></td>
 				<td width="250" align="left"><div align="left">
-						<input name="pid" type="text" size="30" class="easyui-textbox"
+						<input name="pid" type="text" size="30" class="easyui-numberbox"
 							data-options="required:true"></input>
 					</div></td>
 				<td width="80" align="right"><div align="right">条形码：</div></td>
@@ -62,14 +62,14 @@
 				<td width="80" align="right"><div align="right">数量：</div></td>
 				<td width="250"><div align="left">
 						<input name="quantity" type="text" size="30"
-							class="easyui-textbox" data-options="required:true">
+							class="easyui-numberbox" data-options="required:true">
 					</div></td>
 			</tr>
 			<tr>
 				<td width="80" align="right"><div align="right">工费：</div></td>
 				<td width="250"><div align="left">
 						<input name="retaPrice" type="text" size="30"
-							class="easyui-textbox" data-options="required:true">
+							class="easyui-numberbox" data-options="required:true">
 					</div></td>
 				
 			</tr>

@@ -51,6 +51,7 @@ public class AddExportServlet extends HttpServlet {
 		response.setCharacterEncoding("utf-8");
 		response.setContentType("text/html;charset=utf-8");// 防止乱码
 		
+		try{
 		String barCode = request.getParameter("barCode");
 		String receiveDept = request.getParameter("receiveDept");
 		String receiver = request.getParameter("receiver");
@@ -79,6 +80,16 @@ public class AddExportServlet extends HttpServlet {
 		}//判断是否添加成功parent.location='index.jsp'
 		JSONObject result = new JSONObject(data);
 		response.getWriter().write(result.toString());
+		}catch(Exception e){
+			Log.out("error", e);
+			Map<String, String> data = new HashMap<String, String>();
+			data.put("result", "0");
+			data.put("msg", "添加失败,请刷新页面重新添加");
+			JSONObject result = new JSONObject(data);
+			response.getWriter().write(result.toString());
 		}
+		
+		}
+	
 
 }

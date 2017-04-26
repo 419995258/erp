@@ -37,7 +37,7 @@
 
 
 
-	<form id="productfrom" class="easyui-form"
+	<form id="productfrom" class="easyui-form" name="productfrom"
 		encType="multipart/form-data" method="post"
 		data-options="novalidate:false">
 
@@ -45,12 +45,12 @@
 			<tr>
 				<td width="150" align="right"><div align="right">商品编号：</div></td>
 				<td width="300" align="left"><div align="left">
-						<input name="pid" type="text" size="30" class="easyui-textbox"
+						<input name="pid" type="text" size="30" class="easyui-numberbox"
 							data-options="required:true">
 					</div></td>
 				<td width="150" align="right"><div align="right">会员号：</div></td>
 				<td width="300" align="left"><div align="left">
-						<input name="cid" type="text" size="30" class="easyui-textbox"
+						<input name="cid" type="text" size="30" class="easyui-numberbox"
 							data-options="required:true">
 					</div></td>
 			</tr>
@@ -58,7 +58,7 @@
 
 				<td width="150" align="right"><div align="right">定制单号：</div></td>
 				<td width="250" align="left"><div align="left">
-						<input name="diyNum" type="text" size="30" class="easyui-textbox"
+						<input name="diyNum" type="text" size="30" class="easyui-numberbox"
 							data-options="required:true"></input>
 					</div></td>
 				<td width="150" align="right"><div align="right">定制日期：</div></td>
@@ -75,24 +75,24 @@
 					</div></td>
 				<td width="150" align="right"><div align="right">数量：</div></td>
 				<td width="250"><div align="left">
-						<input name=quantity type="text" size="30" class="easyui-textbox"
+						<input name=quantity type="text" size="30" class="easyui-numberbox"
 							data-options="required:true">
 					</div></td>
 				<td width="150" align="right"><div align="right">零售价：</div></td>
 				<td width="250"><div align="left">
 						<input name="retaPrice" type="text" size="30"
-							class="easyui-textbox" data-options="required:true">
+							class="easyui-numberbox" data-options="required:true">
 					</div></td>
 			</tr>
 			<tr>
 				<td width="150" align="right"><div align="right">定金：</div></td>
 				<td width="250"><div align="left">
-						<input name="deposit" type="text" size="30" class="easyui-textbox"
+						<input name="deposit" type="text" size="30" class="easyui-numberbox"
 							data-options="required:true">
 					</div></td>
 				<td width="150" align="right"><div align="right">结算：</div></td>
 				<td width="250"><div align="left">
-						<input name="billing" type="text" size="30" class="easyui-textbox"
+						<input name="billing" type="text" size="30" class="easyui-numberbox"
 							data-options="required:true">
 					</div></td>
 				<td width="150" align="right"><div align="right">收银员：</div></td>
@@ -162,6 +162,11 @@
 		$(function() {
 
 			$(".addProductBtn").click(function() {
+				var s=document.productfrom.customerArchive.value; 
+				if(s==""){
+					alert("请选择文件！");
+					return;
+				}
 				submitProductFrom();
 			});
 

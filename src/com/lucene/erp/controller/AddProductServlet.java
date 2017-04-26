@@ -224,7 +224,6 @@ public class AddProductServlet extends HttpServlet {
 
 					// 获取文件名字
 					String fileName = fileItem.getName();
-
 					// 在控制台输出以上信息
 					System.out.println("这时文件");
 					System.out.println("文件名为：" + fileName);
@@ -308,14 +307,21 @@ public class AddProductServlet extends HttpServlet {
 				delFile.delete();
 				Log.out("product", "信息添加失败");
 			}
-
 			JSONObject result = new JSONObject(data);
+			
 			response.getWriter().write(result.toString());
 			
-		} catch (FileUploadException e) {
+		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+			Log.out("product", "信息添加失败");
+			Map<String, String> data = new HashMap<>();
+			data.put("result", "0");
+			data.put("msg", "商品添加失败,请刷新重新添加");
+			JSONObject result = new JSONObject(data);
+			response.getWriter().write(result.toString());
 		} finally {
+			
 		}
 
 	}

@@ -32,7 +32,7 @@
 			<tr>
 				<td width="80" align="right"><div align="right">商品编号：</div></td>
 				<td width="250" align="left"><div align="left">
-						<input name="pid" type="text" size="30" class="easyui-textbox"
+						<input name="pid" type="text" size="30" class="easyui-numberbox"
 							data-options="required:true"></input>
 					</div></td>
 				<td width="80" align="right"><div align="right">监盘人：</div></td>
@@ -54,7 +54,7 @@
 					</div></td>
 				<td width="80" align="right"><div align="right">盘点库存：</div></td>
 				<td width="250"><div align="left">
-						<input name="inventoryStock" type="text" size="30" class="easyui-textbox"
+						<input name="inventoryStock" type="text" size="30" class="easyui-numberbox"
 							data-options="required:true">
 					</div></td>
 			</tr>

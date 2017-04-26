@@ -47,7 +47,7 @@
 			<tr>
 				<td width="80" align="right"><div align="right">会员号：</div></td>
 				<td width="250" align="left"><div align="left">
-						<input name="cid" type="text" size="30" class="easyui-textbox"
+						<input name="cid" type="text" size="30" class="easyui-numberbox"
 							data-options="required:true"></input>
 					</div></td>
 				<td width="80" align="right"><div align="right">顾客名称：</div></td>
@@ -58,7 +58,7 @@
 				<td width="80" align="right"><div align="right">联系方式：</div></td>
 				<td width="250"><div align="left">
 						<input name="tel" type="text" size="30"
-							class="easyui-textbox" data-options="required:true"></input>
+							class="easyui-numberbox" data-options="required:true"></input>
 					</div></td>
 			</tr>
 			<tr>
@@ -82,7 +82,7 @@
 				<td width="80" align="right"><div align="right">购买金额：</div></td>
 				<td width="250"><div align="left">
 						<input name="saleAmount" type="text" size="30"
-							class="easyui-textbox" data-options="required:true">
+							class="easyui-numberbox" data-options="required:true">
 					</div></td>
 				<td width="80" align="right"><div align="right">回访记录：</div></td>
 				<td width="250"><div align="left">

@@ -686,7 +686,7 @@ public class DateUtil {
 		DateFormat fmt = new SimpleDateFormat("yyyy-MM-dd");
 		try {
 			return fmt.parse(date);
-		} catch (ParseException e) {
+		} catch (Exception e) {
 			e.printStackTrace();
 			return null;
 		}

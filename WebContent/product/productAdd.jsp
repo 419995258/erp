@@ -38,7 +38,7 @@
 
 
 
-	<form id="productfrom" class="easyui-form"
+	<form id="productfrom" class="easyui-form" name="productfrom"
 		encType="multipart/form-data" method="post"
 		data-options="novalidate:false">
 
@@ -46,7 +46,7 @@
 			<tr>
 				<td width="80" align="right"><div align="right">商品编号：</div></td>
 				<td width="250" align="left"><div align="left">
-						<input name="pid" type="text" size="30" class="easyui-textbox"
+						<input name="pid" type="text" size="30" class="easyui-numberbox"
 							data-options="required:true"></input>
 					</div></td>
 				<td width="80" align="right"><div align="right">商品名称：</div></td>
@@ -85,12 +85,12 @@
 					</div></td>
 				<td width="80" align="right"><div align="right">规格：</div></td>
 				<td width="250"><div align="left">
-						<input name="size" type="text" size="30" class="easyui-textbox"
+						<input name="size" type="text" size="30" class="easyui-numberbox"
 							data-options="required:true">
 					</div></td>
 				<td width="80" align="right"><div align="right">金重(k)：</div></td>
 				<td width="250"><div align="left">
-						<input name="weight" type="text" size="30" class="easyui-textbox"
+						<input name="weight" type="text" size="30" class="easyui-numberbox"
 							data-options="required:true">
 					</div></td>
 			</tr>
@@ -98,17 +98,17 @@
 				<td width="80" align="right"><div align="right">配石(ct)：</div></td>
 				<td width="250"><div align="left">
 						<input name="subStone" type="text" size="30"
-							class="easyui-textbox" data-options="required:true">
+							class="easyui-numberbox" data-options="required:true">
 					</div></td>
 				<td width="80" align="right"><div align="right">主石(ct)：</div></td>
 				<td width="250"><div align="left">
 						<input name="mainStone" type="text" size="30"
-							class="easyui-textbox" data-options="required:true">
+							class="easyui-numberbox" data-options="required:true">
 					</div></td>
 				<td width="80" align="right"><div align="right">金费：</div></td>
 				<td width="250"><div align="left">
 						<input name="goldCost" type="text" size="30"
-							class="easyui-textbox" data-options="required:true">
+							class="easyui-numberbox" data-options="required:true">
 					</div></td>
 			</tr>
 
@@ -116,7 +116,7 @@
 				<td width="80" align="right"><div align="right">工费：</div></td>
 				<td width="250"><div align="left">
 						<input name="handCost" type="text" size="30"
-							class="easyui-textbox" data-options="required:true">
+							class="easyui-numberbox" data-options="required:true">
 					</div></td>
 				<td width="80" align="right"><div align="right">数量：</div></td>
 				<td width="250"><div align="left">
@@ -125,7 +125,7 @@
 					</div></td>
 				<td width="80" align="right"><div align="right">成本：</div></td>
 				<td width="250"><div align="left">
-						<input name="cost" type="text" size="30" class="easyui-textbox"
+						<input name="cost" type="text" size="30" class="easyui-numberbox"
 							data-options="required:true">
 					</div></td>
 			</tr>
@@ -143,7 +143,7 @@
 				<td width="80" align="right"><div align="right">商品图片：</div></td>
 				<td width="250"><div align="left">
 						<!-- <input name="photoLink" type="file" size="10" value="选择图片"> -->
-						<input class="easyui-filebox" name="photoLink"
+						<input class="easyui-filebox" name="photoLink" id="photoLink"
 							data-options="prompt:'选择一张商品图片'" style="width: 100%">
 						<!-- <input name="add" type="submit" value="添加"> -->
 					</div></td>
@@ -200,8 +200,14 @@
 
 	<script type="text/javascript">
 		$(function() {
-
+			
 			$(".addProductBtn").click(function() {
+				var s=document.productfrom.photoLink.value; 
+				if(s==""){
+					alert("请选择文件！");
+					return;
+				}
+				
 				submitProductFrom();
 			});
 
@@ -224,8 +230,11 @@
 						parent.$('#productGrid').datagrid('reload');
 						parent.$('#Win').window('close');
 					}
-					
-				}
+				},
+				 error:function(data){  
+					 alert("1");  
+		     	}
+				
 			});
 		}
 	</script>

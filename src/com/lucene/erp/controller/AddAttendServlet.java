@@ -98,10 +98,14 @@ public class AddAttendServlet extends HttpServlet {
 			JSONObject result = new JSONObject(data);
 			response.getWriter().write(result.toString());
 			
-		} catch (ParseException e) {
+		} catch (Exception e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
 			Log.out("error", e);
+			Map<String, String> data = new HashMap<String, String>();
+			data.put("result", "0");
+			data.put("msg", "添加失败,请刷新页面重新添加");
+			JSONObject result = new JSONObject(data);
+			response.getWriter().write(result.toString());
 		}
 
 	}

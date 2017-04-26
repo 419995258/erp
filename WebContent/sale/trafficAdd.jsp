@@ -32,7 +32,7 @@
 			<tr>
 				<td width="80" align="right"><div align="right">进店人数：</div></td>
 				<td width="250" align="left"><div align="left">
-						<input name="innum" type="text" size="30" class="easyui-textbox"
+						<input name="innum" type="text" size="30" class="easyui-numberbox"
 							data-options="required:true"></input>
 					</div></td>
 				 <td width="80" align="right"><div align="right">进入时间：</div></td>
@@ -54,12 +54,12 @@
 					</div></td>
 				<td width="80" align="right"><div align="right">年龄：</div></td>
 				<td width="250"><div align="left">
-						<input name="age" type="text" size="30" class="easyui-textbox"
+						<input name="age" type="text" size="30" class="easyui-numberbox"
 							data-options="required:true">
 					</div></td>
 				<td width="80" align="right"><div align="right">商品款号：</div></td>
 				<td width="250"><div align="left">
-						<input name="pid" type="text" size="30" class="easyui-textbox"
+						<input name="pid" type="text" size="30" class="easyui-numberbox"
 							data-options="required:true">
 					</div></td>
 			</tr>
