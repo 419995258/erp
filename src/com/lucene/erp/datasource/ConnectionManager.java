@@ -14,7 +14,7 @@ public class ConnectionManager {
 			Class.forName("com.mysql.jdbc.Driver");
 		
 			String account = "root";
-			/*String password = "012303lgX";*/
+			//String password = "123456789lgX";
 			String password = "123456";
 			String url = "jdbc:mysql://localhost:3306/erp";
 

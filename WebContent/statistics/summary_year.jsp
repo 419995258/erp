@@ -25,7 +25,6 @@
 			,method:'get'
 			,url:'PreShowSummaryYearmanageServlet'
 			,toolbar:'#toolbar1'
-			,onRowContextMenu:showRowContextMenu
 			,striped:true
 			,sortName:'id'
 			,sortOrder:'asc'
@@ -45,9 +44,6 @@
 		</thead>
 	</table>
 
-	<div id="productmenu" class="easyui-menu">
-		<div name="detail" iconCls="icon-tip">详情</div>
-	</div>
 
 <!-- 	<div id="toolbar1" class="easyui-layout">
 		<input class="easyui-datebox" style="width: 80px">
@@ -64,7 +60,6 @@
 		</div>
 	</div>
 
-	<div id="Win"></div>
 
 
 	<script type="text/javascript">

@@ -26,7 +26,6 @@
 			,method:'get'
 			,url:'PreShowSummaryDaymanageServlet'
 			,toolbar:'#toolbar1'
-			,onRowContextMenu:showRowContextMenu
 			,striped:true
 			,sortName:'sid'
 			,sortOrder:'desc'
@@ -56,7 +55,7 @@
 		</div>
 	</div>
 
-	<div id="Win"></div>
+	<!-- <div id="Win"></div> -->
 
 
 	<script type="text/javascript">

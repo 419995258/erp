@@ -97,10 +97,10 @@ public class LoginServlet extends HttpServlet {
 				out.println("<script>location.href='index.jsp'</script>");
 				break;
 			case 2:
-				out.println("<script>location.href='index2.jsp'</script>");
+				out.println("<script>location.href='2ahsdhjkhdqhs.jsp'</script>");
 				break;
 			case 3:
-				out.println("<script>location.href='index3.jsp'</script>");
+				out.println("<script>location.href='00ojoidhgihaos.jsp'</script>");
 				break;
 			
 			default:

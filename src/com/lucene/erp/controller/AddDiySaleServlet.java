@@ -244,7 +244,10 @@ public class AddDiySaleServlet extends HttpServlet {
 					// 文件重命名
 					UploadFileName = genterateName(fileName);
 					File savrFile = new File(fileUploadPath, UploadFileName.trim());
-					durl = "../erp_v2.0/upload/photo/" + UploadFileName;
+					//本机
+					//durl = "../erp_v2.0/upload/doc/" + UploadFileName;
+					//服务器
+					durl = "../upload/doc/" + UploadFileName;
 					customerArchive = durl;
 					customerArchiveName = UploadFileName;
 					Log.out("sale", "上传后的文件的名是：" + UploadFileName);
